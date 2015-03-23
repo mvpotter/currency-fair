@@ -38,9 +38,9 @@ public class TradeApiIntegrationTest {
         trade = new Trade();
         trade.setUserId(134256);
         trade.setCurrencyFrom("EUR");
-        trade.setCurrencyTo("GBP");
-        trade.setAmountSell(new BigDecimal("65050"));
-        trade.setAmountBuy(new BigDecimal("1000"));
+        trade.setCurrencyTo("RUB");
+        trade.setAmountSell(new BigDecimal("2000"));
+        trade.setAmountBuy(new BigDecimal("130100"));
         trade.setRate(new BigDecimal("65.05"));
         trade.setTimePlaced(DateTime.now());
         trade.setOriginatingCountry("RU");

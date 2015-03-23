@@ -10,6 +10,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.joda.time.DateTime;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
@@ -25,10 +26,13 @@ public class Trade {
     @Size(min = 3, max = 3)
     private String currencyTo;
 
+    @Min(0)
     private BigDecimal amountSell;
 
+    @Min(0)
     private BigDecimal amountBuy;
 
+    @Min(0)
     @JsonSerialize(using = BigDecimalJsonSerializer.class)
     private BigDecimal rate;
 

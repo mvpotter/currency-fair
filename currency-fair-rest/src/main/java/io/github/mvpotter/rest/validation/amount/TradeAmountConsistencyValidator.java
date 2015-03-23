@@ -20,7 +20,8 @@ public class TradeAmountConsistencyValidator implements ConstraintValidator<Trad
 
     @Override
     public boolean isValid(final Trade trade, ConstraintValidatorContext context) {
-        return trade.getAmountSell().multiply(trade.getRate()).equals(trade.getAmountBuy());
+        return trade.getAmountSell().multiply(trade.getRate()).stripTrailingZeros()
+                .equals(trade.getAmountBuy().stripTrailingZeros());
     }
 
 }
