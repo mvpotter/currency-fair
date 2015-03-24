@@ -4,7 +4,7 @@
  * Date: 22/03/15
  * Time: 21:01
  */
-package io.github.mvpotter.rest.validation;
+package io.github.mvpotter.validation.helper;
 
 /**
  * Interface for beans validation.

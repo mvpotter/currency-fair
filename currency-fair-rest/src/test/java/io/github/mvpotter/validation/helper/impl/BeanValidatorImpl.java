@@ -4,9 +4,9 @@
  * Date: 22/03/15
  * Time: 21:03
  */
-package io.github.mvpotter.rest.validation.impl;
+package io.github.mvpotter.validation.helper.impl;
 
-import io.github.mvpotter.rest.validation.BeanValidator;
+import io.github.mvpotter.validation.helper.BeanValidator;
 import jersey.repackaged.com.google.common.base.Joiner;
 import org.springframework.stereotype.Service;
 
