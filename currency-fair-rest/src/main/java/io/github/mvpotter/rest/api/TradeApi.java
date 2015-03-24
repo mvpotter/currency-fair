@@ -21,7 +21,7 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 
 @Component
-@Path("api/trade")
+@Path("trade")
 @Produces(MediaType.APPLICATION_JSON)
 public class TradeApi {
 

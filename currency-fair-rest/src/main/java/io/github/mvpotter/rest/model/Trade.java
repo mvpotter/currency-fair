@@ -1,5 +1,7 @@
 package io.github.mvpotter.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.github.mvpotter.rest.serializer.BigDecimalJsonSerializer;
