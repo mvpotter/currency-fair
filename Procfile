@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -jar currency-fair-rest/target/currency-fair-rest-1.0-SNAPSHOT.jar
