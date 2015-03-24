@@ -1,5 +1,6 @@
 package io.github.mvpotter.rest.configuration;
 
+import io.github.mvpotter.rest.api.RateLimitFilter;
 import io.github.mvpotter.rest.api.TradeApi;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +10,7 @@ public class JerseyConfig extends ResourceConfig {
 
     public JerseyConfig() {
         register(TradeApi.class);
+        register(RateLimitFilter.class);
     }
 
 }
