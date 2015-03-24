@@ -1,6 +1,13 @@
 api:
-    # limits number of POST requests per second
-    rate-limit: 300
+  # limits number of POST requests per second
+  rate-limit: 300
 
-server:
-    port: 8080
+management:
+  context-path: /stats
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: test
+    password: test
