@@ -11,6 +11,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
@@ -20,26 +21,33 @@ public class Trade {
     private Long id;
     private Long userId;
 
+    @NotNull
     @Size(min = 3, max = 3)
     private String currencyFrom;
 
+    @NotNull
     @Size(min = 3, max = 3)
     private String currencyTo;
 
+    @NotNull
     @Min(0)
     private BigDecimal amountSell;
 
+    @NotNull
     @Min(0)
     private BigDecimal amountBuy;
 
+    @NotNull
     @Min(0)
     @JsonSerialize(using = BigDecimalJsonSerializer.class)
     private BigDecimal rate;
 
+    @NotNull
     @JsonSerialize(using = DateTimeJsonSerializer.class)
     @JsonDeserialize(using = DateTimeJsonDeserializer.class)
     private DateTime timePlaced;
 
+    @NotNull
     @Size(min = 2, max = 2)
     private String originatingCountry;
 

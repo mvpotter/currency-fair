@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
-import javax.validation.executable.ValidateOnExecution;
+import javax.validation.constraints.NotNull;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -44,8 +44,7 @@ public class TradeApi {
     }
 
     @POST
-    @ValidateOnExecution
-    public Response saveTrade(@Valid final Trade trade) {
+    public Response saveTrade(@NotNull @Valid final Trade trade) {
         LOGGER.info(trade.toString());
         final Trade savedTrade = tradeController.saveTrade(trade);
         URI location = uriInfo.getAbsolutePathBuilder()

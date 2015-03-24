@@ -1,9 +1,3 @@
-/*
- * Created with IntelliJ IDEA.
- * User: michaelpotter
- * Date: 22/03/15
- * Time: 21:42
- */
 package io.github.mvpotter.rest.validation.amount;
 
 import io.github.mvpotter.rest.model.Trade;
@@ -20,6 +14,9 @@ public class TradeAmountConsistencyValidator implements ConstraintValidator<Trad
 
     @Override
     public boolean isValid(final Trade trade, ConstraintValidatorContext context) {
+        if (trade.getAmountSell() == null || trade.getAmountBuy() == null || trade.getRate() == null) {
+            return false;
+        }
         return trade.getAmountSell().multiply(trade.getRate()).stripTrailingZeros()
                 .equals(trade.getAmountBuy().stripTrailingZeros());
     }
