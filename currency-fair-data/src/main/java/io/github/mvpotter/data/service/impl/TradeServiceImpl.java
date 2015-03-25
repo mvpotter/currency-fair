@@ -30,8 +30,12 @@ public class TradeServiceImpl implements TradeService {
 
     @Override
     public Trade saveTrade(final Trade trade) {
-        // TODO: validate
         return tradeRepository.save(trade);
+    }
+
+    @Override
+    public long getCount() {
+        return tradeRepository.count();
     }
 
 }

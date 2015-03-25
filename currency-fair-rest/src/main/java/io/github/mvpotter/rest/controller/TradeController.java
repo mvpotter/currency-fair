@@ -12,5 +12,6 @@ public interface TradeController {
 
     Trade getTrade(Long id);
     Trade saveTrade(Trade trade);
+    long getCount();
 
 }

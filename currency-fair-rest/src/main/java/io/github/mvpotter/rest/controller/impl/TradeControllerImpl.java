@@ -35,10 +35,15 @@ public class TradeControllerImpl implements TradeController {
 
     @Override
     public Trade saveTrade(final Trade restTrade) {
-        // TODO: validate!
         final io.github.mvpotter.data.model.Trade trade
                 = conversionService.convert(restTrade, io.github.mvpotter.data.model.Trade.class);
         final io.github.mvpotter.data.model.Trade savedTrade = tradeService.saveTrade(trade);
         return conversionService.convert(savedTrade, Trade.class);
     }
+
+    @Override
+    public long getCount() {
+        return tradeService.getCount();
+    }
+
 }

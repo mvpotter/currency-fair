@@ -1,6 +1,7 @@
 package io.github.mvpotter.rest.api;
 
 import io.github.mvpotter.rest.controller.TradeController;
+import io.github.mvpotter.rest.model.CountResponse;
 import io.github.mvpotter.rest.model.Trade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +36,12 @@ public class TradeApi {
     @Inject
     public TradeApi(final TradeController tradeController) {
         this.tradeController = tradeController;
+    }
+
+    @GET
+    @Path("count")
+    public CountResponse tradeCount() {
+        return new CountResponse(tradeController.getCount());
     }
 
     @GET
