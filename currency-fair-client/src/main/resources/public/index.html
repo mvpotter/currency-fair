@@ -1,14 +1,42 @@
 <!doctype html>
 <html ng-app>
-<head>
-    <title>Hello AngularJS</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    <script src="trade.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body>
-<div ng-controller="Trade">
-    <p>Trades count is {{count}}</p>
-</div>
-</body>
+        <title>CurrencyFair</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="trade.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div ng-controller="Trade">
+                <table class="table">
+                    <caption>Total: {{count}}</caption>
+                    <thead>
+                        <tr>
+                            <th>Buy</th>
+                            <th>Sell</th>
+                            <th>Time</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="trade in trades">
+                            <td>{{trade.amountBuy}}</td>
+                            <td>{{trade.amountSell}}</td>
+                            <td>{{trade.timePlaced}}</td>
+                            <td>{{trade.originatingCountry}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
 </html>

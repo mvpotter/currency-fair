@@ -9,6 +9,8 @@ package io.github.mvpotter.data.service.impl;
 import io.github.mvpotter.data.dao.TradeRepository;
 import io.github.mvpotter.data.model.Trade;
 import io.github.mvpotter.data.service.TradeService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -21,6 +23,11 @@ public class TradeServiceImpl implements TradeService {
     @Inject
     public TradeServiceImpl(final TradeRepository tradeRepository) {
         this.tradeRepository = tradeRepository;
+    }
+
+    @Override
+    public Page<Trade> getTrades() {
+        return tradeRepository.findAll(new PageRequest(0, 5));
     }
 
     @Override

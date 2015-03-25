@@ -26,7 +26,7 @@ import java.net.URI;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebIntegrationTest("server.port=9000")
-public class TradeApiIntegrationTest {
+public class TradesApiIntegrationTest {
 
     private RestTemplate restTemplate = new TestRestTemplate();
     private Trade trade;
@@ -47,7 +47,7 @@ public class TradeApiIntegrationTest {
     @Test
     public void saveTradeTest() {
 
-        final URI uri = restTemplate.postForLocation("http://localhost:9000/api/trade", trade);
+        final URI uri = restTemplate.postForLocation("http://localhost:9000/api/trades", trade);
         final ResponseEntity<Trade> responseEntity = restTemplate.getForEntity(uri, Trade.class);
         final Trade savedTrade = responseEntity.getBody();
         Assert.assertEquals(trade, savedTrade);

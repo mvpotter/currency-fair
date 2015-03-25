@@ -20,13 +20,14 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.net.URI;
+import java.util.List;
 
 @Component
-@Path("trade")
+@Path("trades")
 @Produces(MediaType.APPLICATION_JSON)
-public class TradeApi {
+public class TradesApi {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TradeApi.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TradesApi.class);
 
     private final TradeController tradeController;
 
@@ -34,8 +35,13 @@ public class TradeApi {
     private UriInfo uriInfo;
 
     @Inject
-    public TradeApi(final TradeController tradeController) {
+    public TradesApi(final TradeController tradeController) {
         this.tradeController = tradeController;
+    }
+
+    @GET
+    public List<Trade> getTrades() {
+        return tradeController.getTrades();
     }
 
     @GET
