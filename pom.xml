@@ -18,7 +18,17 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <spring-boot.version>1.2.2.RELEASE</spring-boot.version>
+        <hsqldb.version>2.3.2</hsqldb.version>
+        <joda-time.version>2.7</joda-time.version>
+        <usertype.joda-time.version>2.0.1</usertype.joda-time.version>
+        <inject.version>1</inject.version>
+        <commons.version>3.3.2</commons.version>
+
+        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+
         <java.version>1.8</java.version>
 
         <integration-test.path>**/integration/**</integration-test.path>
@@ -98,31 +108,31 @@
             <dependency>
                 <groupId>org.hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
-                <version>2.3.2</version>
+                <version>${hsqldb.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
-                <version>2.7</version>
+                <version>${joda-time.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.jadira.usertype</groupId>
                 <artifactId>usertype.jodatime</artifactId>
-                <version>2.0.1</version>
+                <version>${usertype.joda-time.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>javax.inject</groupId>
                 <artifactId>javax.inject</artifactId>
-                <version>1</version>
+                <version>${inject.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.3.2</version>
+                <version>${commons.version}</version>
             </dependency>
 
         </dependencies>
@@ -146,7 +156,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -156,7 +166,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18.1</version>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <excludes>
                         <exclude>${integration-test.path}</exclude>
