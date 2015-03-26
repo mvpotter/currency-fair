@@ -1,5 +1,6 @@
 package io.github.mvpotter.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.github.mvpotter.rest.serializer.BigDecimalJsonSerializer;
@@ -18,37 +19,47 @@ import java.math.BigDecimal;
 @TradeAmountConsistencyCheck
 public class Trade {
 
+    @JsonView(View.Public.class)
     private Long id;
+
+    @JsonView(View.Internal.class)
     private Long userId;
 
     @NotNull
     @Size(min = 3, max = 3)
+    @JsonView(View.Public.class)
     private String currencyFrom;
 
     @NotNull
     @Size(min = 3, max = 3)
+    @JsonView(View.Public.class)
     private String currencyTo;
 
     @NotNull
     @Min(0)
+    @JsonView(View.Public.class)
     private BigDecimal amountSell;
 
     @NotNull
     @Min(0)
+    @JsonView(View.Public.class)
     private BigDecimal amountBuy;
 
     @NotNull
     @Min(0)
+    @JsonView(View.Public.class)
     @JsonSerialize(using = BigDecimalJsonSerializer.class)
     private BigDecimal rate;
 
     @NotNull
+    @JsonView(View.Public.class)
     @JsonSerialize(using = DateTimeJsonSerializer.class)
     @JsonDeserialize(using = DateTimeJsonDeserializer.class)
     private DateTime timePlaced;
 
     @NotNull
     @Size(min = 2, max = 2)
+    @JsonView(View.Public.class)
     private String originatingCountry;
 
     public Long getId() {
@@ -167,6 +178,11 @@ public class Trade {
                 ", timePlaced=" + timePlaced +
                 ", originatingCountry='" + originatingCountry + '\'' +
                 '}';
+    }
+
+    public static class View {
+        public interface Public {};
+        public interface Internal extends Public {};
     }
 
 }

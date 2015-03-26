@@ -1,5 +1,6 @@
 package io.github.mvpotter.rest.api;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import io.github.mvpotter.rest.controller.TradeController;
 import io.github.mvpotter.rest.model.CountResponse;
 import io.github.mvpotter.rest.model.Trade;
@@ -40,6 +41,7 @@ public class TradesApi {
     }
 
     @GET
+    @JsonView(Trade.View.Public.class)
     public List<Trade> getTrades() {
         return tradeController.getTrades();
     }
