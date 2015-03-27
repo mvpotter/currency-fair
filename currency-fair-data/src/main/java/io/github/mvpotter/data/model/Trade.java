@@ -5,23 +5,36 @@ import org.joda.time.DateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
+@Table(name = "trade")
 public class Trade extends AbstractEntity {
 
+    @Column(name = "user_id")
     private Long userId;
+
+    @Column(name = "currency_from")
     private String currencyFrom;
+
+    @Column(name = "currency_to")
     private String currencyTo;
+
+    @Column(name = "amount_sell")
     private BigDecimal amountSell;
+
+    @Column(name = "amount_buy")
     private BigDecimal amountBuy;
 
-    @Column(precision = 7, scale = 5)
+    @Column(name = "rate", precision = 7, scale = 5)
     private BigDecimal rate;
 
+    @Column(name = "time_placed")
     @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     private DateTime timePlaced;
 
+    @Column(name = "originating_country")
     private String originatingCountry;
 
     public long getUserId() {
@@ -101,4 +114,5 @@ public class Trade extends AbstractEntity {
                 ", originatingCountry='" + originatingCountry + '\'' +
                 '}';
     }
+
 }
