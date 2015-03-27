@@ -1,9 +1,3 @@
-/*
- * Created with IntelliJ IDEA.
- * User: michaelpotter
- * Date: 22/03/15
- * Time: 13:24
- */
 package io.github.mvpotter.rest.converter;
 
 import io.github.mvpotter.data.model.Trade;

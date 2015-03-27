@@ -1,9 +1,3 @@
-/*
- * Created with IntelliJ IDEA.
- * User: michaelpotter
- * Date: 21/03/15
- * Time: 00:03
- */
 package io.github.mvpotter.data.model;
 
 import javax.persistence.*;

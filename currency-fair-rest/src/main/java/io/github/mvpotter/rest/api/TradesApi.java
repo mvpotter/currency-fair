@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import io.github.mvpotter.rest.controller.TradeController;
 import io.github.mvpotter.rest.model.CountResponse;
 import io.github.mvpotter.rest.model.Trade;
+import io.github.mvpotter.rest.model.TradesPage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -23,6 +24,9 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.List;
 
+/**
+ * Trade REST API service
+ */
 @Component
 @Path("trades")
 @Produces(MediaType.APPLICATION_JSON)
@@ -42,14 +46,8 @@ public class TradesApi {
 
     @GET
     @JsonView(Trade.View.Public.class)
-    public List<Trade> getTrades() {
+    public TradesPage getTrades() {
         return tradeController.getTrades();
-    }
-
-    @GET
-    @Path("count")
-    public CountResponse tradeCount() {
-        return new CountResponse(tradeController.getCount());
     }
 
     @GET

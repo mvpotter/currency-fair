@@ -1,9 +1,3 @@
-/*
- * Created with IntelliJ IDEA.
- * User: michaelpotter
- * Date: 22/03/15
- * Time: 10:50
- */
 package io.github.mvpotter.data.service.impl;
 
 import io.github.mvpotter.data.dao.TradeRepository;
@@ -26,8 +20,8 @@ public class TradeServiceImpl implements TradeService {
     }
 
     @Override
-    public Page<Trade> getTrades() {
-        return tradeRepository.findAll(new PageRequest(0, 5));
+    public Page<Trade> getTrades(final int page, final int size) {
+        return tradeRepository.findAll(new PageRequest(page, size));
     }
 
     @Override
@@ -38,11 +32,6 @@ public class TradeServiceImpl implements TradeService {
     @Override
     public Trade saveTrade(final Trade trade) {
         return tradeRepository.save(trade);
-    }
-
-    @Override
-    public long getCount() {
-        return tradeRepository.count();
     }
 
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="trades">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,26 +11,27 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-        <script src="trade.js"></script>
+        <script src="trades/app.js"></script>
+        <script src="trades/controller/TradeController.js"></script>
     </head>
 
     <body>
         <div class="container">
-            <div ng-controller="Trade">
+            <div ng-controller="TradeCtrl">
                 <table class="table">
-                    <caption>Total: {{count}}</caption>
+                    <caption>Total: {{trades.total}}</caption>
                     <thead>
                         <tr>
-                            <th>Buy</th>
                             <th>Sell</th>
+                            <th>Buy</th>
                             <th>Time</th>
                             <th>Country</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="trade in trades">
-                            <td>{{trade.amountBuy}}</td>
-                            <td>{{trade.amountSell}}</td>
+                        <tr ng-repeat="trade in trades.content">
+                            <td>{{trade.amountSell}} {{trade.currencyFrom}}</td>
+                            <td>{{trade.amountBuy}} {{trade.currencyTo}}</td>
                             <td>{{trade.timePlaced}}</td>
                             <td>{{trade.originatingCountry}}</td>
                         </tr>

@@ -1,9 +1,3 @@
-/*
- * Created with IntelliJ IDEA.
- * User: michaelpotter
- * Date: 24/03/15
- * Time: 20:30
- */
 package io.github.mvpotter.client;
 
 import org.springframework.boot.SpringApplication;

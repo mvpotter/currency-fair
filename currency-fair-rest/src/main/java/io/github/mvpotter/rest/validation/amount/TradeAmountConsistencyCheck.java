@@ -1,9 +1,3 @@
-/*
-* Created with IntelliJ IDEA.
-* User: michaelpotter
-* Date: 22/03/15
-* Time: 21:37
-*/
 package io.github.mvpotter.rest.validation.amount;
 
 import javax.validation.Constraint;

@@ -8,6 +8,7 @@ package io.github.mvpotter.rest.configuration;
 
 import io.github.mvpotter.rest.converter.RestTradeConverter;
 import io.github.mvpotter.rest.converter.TradeConverter;
+import io.github.mvpotter.rest.converter.TradePageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ConversionServiceFactoryBean;
@@ -33,6 +34,7 @@ public class ConversionConfiguration {
 
         converters.add(new TradeConverter());
         converters.add(new RestTradeConverter());
+        converters.add(new TradePageConverter());
 
         return converters;
     }

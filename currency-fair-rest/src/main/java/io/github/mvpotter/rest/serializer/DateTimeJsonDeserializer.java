@@ -1,9 +1,3 @@
-/*
- * Created with IntelliJ IDEA.
- * User: michaelpotter
- * Date: 22/03/15
- * Time: 11:26
- */
 package io.github.mvpotter.rest.serializer;
 
 import com.fasterxml.jackson.core.JsonParser;
