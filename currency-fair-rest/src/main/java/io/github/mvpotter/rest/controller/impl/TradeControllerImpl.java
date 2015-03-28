@@ -2,16 +2,12 @@ package io.github.mvpotter.rest.controller.impl;
 
 import io.github.mvpotter.data.service.TradeService;
 import io.github.mvpotter.rest.controller.TradeController;
-import io.github.mvpotter.rest.model.Page;
 import io.github.mvpotter.rest.model.Trade;
 import io.github.mvpotter.rest.model.TradesPage;
 import org.springframework.core.convert.ConversionService;
-import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.stereotype.Controller;
 
 import javax.inject.Inject;
-import java.util.LinkedList;
-import java.util.List;
 
 @Controller
 public class TradeControllerImpl implements TradeController {

@@ -63,5 +63,5 @@ crashlytics.properties
 crashlytics-build.properties
 
 target/
-
+coverage-error.log
 

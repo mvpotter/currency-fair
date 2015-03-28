@@ -1,15 +1,9 @@
-/*
- * Created with IntelliJ IDEA.
- * User: michaelpotter
- * Date: 23/03/15
- * Time: 19:06
- */
-package io.github.mvpotter.validation;
+package io.github.mvpotter.rest.validation;
 
 import io.github.mvpotter.Application;
+import io.github.mvpotter.TradeTestUtils;
 import io.github.mvpotter.rest.model.Trade;
-import io.github.mvpotter.validation.helper.BeanValidator;
-import org.joda.time.DateTime;
+import io.github.mvpotter.rest.validation.helper.BeanValidator;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,15 +25,7 @@ public class TradeValidationTest {
 
     @Before
     public void before() {
-        trade = new Trade();
-        trade.setUserId(134256);
-        trade.setCurrencyFrom("EUR");
-        trade.setCurrencyTo("RUB");
-        trade.setAmountSell(new BigDecimal("2000"));
-        trade.setAmountBuy(new BigDecimal("130100"));
-        trade.setRate(new BigDecimal("65.05"));
-        trade.setTimePlaced(DateTime.now());
-        trade.setOriginatingCountry("RU");
+        trade = TradeTestUtils.createTrade();
     }
 
     @Test

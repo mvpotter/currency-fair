@@ -19,6 +19,8 @@ import java.math.BigDecimal;
 @TradeAmountConsistencyCheck
 public class Trade {
 
+    public static final String DATE_FORMAT = "dd-MMM-yy HH:mm:ss";
+
     @JsonView(View.Public.class)
     private Long id;
 
