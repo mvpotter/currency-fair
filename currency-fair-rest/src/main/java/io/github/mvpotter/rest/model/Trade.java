@@ -16,6 +16,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
+/**
+ * Trade REST API object.
+ */
 @TradeAmountConsistencyCheck
 public class Trade {
 

@@ -2,7 +2,6 @@ package io.github.mvpotter.rest.api;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import io.github.mvpotter.rest.controller.TradeController;
-import io.github.mvpotter.rest.model.CountResponse;
 import io.github.mvpotter.rest.model.Trade;
 import io.github.mvpotter.rest.model.TradesPage;
 import org.slf4j.Logger;
@@ -24,7 +23,7 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 
 /**
- * Trade REST API service
+ * Trade REST API service.
  */
 @Component
 @Path("trades")

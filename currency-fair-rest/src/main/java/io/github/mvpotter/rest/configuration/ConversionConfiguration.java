@@ -18,6 +18,9 @@ import org.springframework.core.convert.converter.Converter;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Converter service configuration.
+ */
 @Configuration
 public class ConversionConfiguration {
 

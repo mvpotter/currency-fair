@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 
 import javax.inject.Inject;
 
+/**
+ * Trade controller implementation.
+ */
 @Controller
 public class TradeControllerImpl implements TradeController {
 

@@ -5,6 +5,9 @@ import io.github.mvpotter.rest.model.Trade;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+/**
+ * Checks trade values consistency.
+ */
 public class TradeAmountConsistencyValidator implements ConstraintValidator<TradeAmountConsistencyCheck, Trade> {
 
     @Override

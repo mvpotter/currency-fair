@@ -3,6 +3,9 @@ package io.github.mvpotter.rest.model;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Trades page container.
+ */
 public class TradesPage extends Page<Trade> {
 
     private final long total;

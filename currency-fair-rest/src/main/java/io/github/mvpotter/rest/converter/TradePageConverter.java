@@ -5,6 +5,9 @@ import io.github.mvpotter.rest.model.TradesPage;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.domain.Page;
 
+/**
+ * Converts persistence model entities to REST API once.
+ */
 public class TradePageConverter implements Converter<Page<Trade>, TradesPage> {
 
     private final TradeConverter tradeConverter;

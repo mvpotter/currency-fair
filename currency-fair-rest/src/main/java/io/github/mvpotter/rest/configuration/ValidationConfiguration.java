@@ -6,6 +6,9 @@ import org.springframework.context.annotation.Configuration;
 import javax.validation.Validation;
 import javax.validation.Validator;
 
+/**
+ * Javax validation configuration.
+ */
 @Configuration
 public class ValidationConfiguration {
 

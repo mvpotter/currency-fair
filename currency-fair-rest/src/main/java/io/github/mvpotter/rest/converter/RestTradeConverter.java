@@ -4,6 +4,9 @@ import io.github.mvpotter.data.model.Trade;
 import org.springframework.beans.BeanUtils;
 import org.springframework.core.convert.converter.Converter;
 
+/**
+ * Converts REST API entities to persistence model once.
+ */
 public class RestTradeConverter implements Converter<io.github.mvpotter.rest.model.Trade, Trade> {
 
     @Override

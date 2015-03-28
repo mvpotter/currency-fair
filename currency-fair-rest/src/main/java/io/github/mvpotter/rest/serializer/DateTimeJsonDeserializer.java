@@ -10,6 +10,9 @@ import org.joda.time.format.DateTimeFormatter;
 
 import java.io.IOException;
 
+/**
+ * DateTime json deserializer.
+ */
 public class DateTimeJsonDeserializer extends JsonDeserializer<DateTime> {
 
     @Override
