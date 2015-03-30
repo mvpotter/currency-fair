@@ -11,3 +11,7 @@ security:
   user:
     name: test
     password: test
+
+spring:
+  profiles:
+    active: postgres

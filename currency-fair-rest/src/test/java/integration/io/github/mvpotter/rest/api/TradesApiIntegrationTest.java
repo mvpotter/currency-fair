@@ -2,6 +2,7 @@ package integration.io.github.mvpotter.rest.api;
 
 import io.github.mvpotter.Application;
 import io.github.mvpotter.TradeTestUtils;
+import io.github.mvpotter.data.configuration.support.DBProfile;
 import io.github.mvpotter.rest.model.Trade;
 import org.apache.commons.codec.binary.Base64;
 import org.junit.Assert;
@@ -16,6 +17,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
@@ -26,6 +28,7 @@ import java.net.URI;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebIntegrationTest("server.port=9000")
+@ActiveProfiles(DBProfile.HSQLDB)
 public class TradesApiIntegrationTest {
 
     private RestTemplate restTemplate = new TestRestTemplate();

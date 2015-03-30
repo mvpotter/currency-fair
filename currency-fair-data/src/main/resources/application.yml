@@ -1,0 +1,18 @@
+
+spring:
+  profiles: hsqldb
+  datasource:
+    driverClassName: org.hsqldb.jdbc.JDBCDriver
+    url: jdbc:hsqldb:mem:trades
+    username: sa
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.HSQLDialect
+
+---
+
+spring:
+  profiles: postgres
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect

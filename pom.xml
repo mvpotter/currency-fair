@@ -21,6 +21,8 @@
 
         <spring-boot.version>1.2.2.RELEASE</spring-boot.version>
         <hsqldb.version>2.3.2</hsqldb.version>
+        <postgres.version>9.4-1201-jdbc41</postgres.version>
+        <flyway.version>3.2.1</flyway.version>
         <joda-time.version>2.7</joda-time.version>
         <usertype.joda-time.version>2.0.1</usertype.joda-time.version>
         <inject.version>1</inject.version>
@@ -113,6 +115,18 @@
             </dependency>
 
             <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgres.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>${joda-time.version}</version>
@@ -178,6 +192,9 @@
                     <excludes>
                         <exclude>${integration-test.path}</exclude>
                     </excludes>
+                    <classpathDependencyExcludes>
+                        <classpathDependencyExclude>org.flywaydb:flyway-core</classpathDependencyExclude>
+                    </classpathDependencyExcludes>
                 </configuration>
                 <executions>
                     <execution>
@@ -190,6 +207,9 @@
                             <excludes>
                                 <exclude>none</exclude>
                             </excludes>
+                            <classpathDependencyExcludes>
+                                <classpathDependencyExclude>org.flywaydb:flyway-core</classpathDependencyExclude>
+                            </classpathDependencyExcludes>
                             <includes>
                                 <include>${integration-test.path}</include>
                             </includes>
