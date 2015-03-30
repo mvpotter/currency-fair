@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar currency-fair-rest/target/currency-fair-rest-1.0-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -Dsecurity.user.name=$USERNAME -Dsecurity.user.password=$PASSWORD -jar currency-fair-rest/target/currency-fair-rest-1.0-SNAPSHOT.jar
