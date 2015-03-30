@@ -10,7 +10,7 @@ import javax.validation.Validator;
  * Javax validation configuration.
  */
 @Configuration
-public class ValidationConfiguration {
+public class ValidationConfig {
 
     @Bean
     public Validator validator() {

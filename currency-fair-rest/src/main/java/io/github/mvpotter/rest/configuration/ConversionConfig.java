@@ -22,7 +22,7 @@ import java.util.Set;
  * Converter service configuration.
  */
 @Configuration
-public class ConversionConfiguration {
+public class ConversionConfig {
 
     @Bean
     public ConversionService conversionService() {
