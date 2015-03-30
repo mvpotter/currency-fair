@@ -24,7 +24,8 @@
         <joda-time.version>2.7</joda-time.version>
         <usertype.joda-time.version>2.0.1</usertype.joda-time.version>
         <inject.version>1</inject.version>
-        <commons.version>3.3.2</commons.version>
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <commons-codec.version>1.10</commons-codec.version>
 
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
@@ -132,7 +133,13 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>${commons.version}</version>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
             </dependency>
 
         </dependencies>
