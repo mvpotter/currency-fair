@@ -20,14 +20,14 @@ import java.net.URISyntaxException;
 @Profile(DBProfile.POSTGRES)
 public class PostgresConfig {
 
-    public static final String ENV_DATABASE_KEY = "database.url";
+    public static final String ENV_DATABASE_KEY = "DATABASE_URL";
     public static final String POSTGRES_DRIVER = "org.postgresql.Driver";
 
-    private static final String URL_FORMAT = "jdbc:postgresql://%s%s";
+    private static final String URL_FORMAT = "jdbc:postgresql://%s:%s%s";
 
     @Bean
     public DataSource dataSource() throws URISyntaxException {
-        String dbProperty = System.getProperty(ENV_DATABASE_KEY);
+        String dbProperty = System.getenv(ENV_DATABASE_KEY);
         if(dbProperty != null) {
             final URI uri = new URI(dbProperty);
             final String[] credentials = uri.getUserInfo().split(":");
@@ -36,7 +36,7 @@ public class PostgresConfig {
             if (credentials.length > 1) {
                 password = credentials[1];
             }
-            final String url = String.format(URL_FORMAT, uri.getHost(), uri.getPath());
+            final String url = String.format(URL_FORMAT, uri.getHost(), uri.getPort(), uri.getPath());
 
             return DataSourceBuilder.create()
                     .driverClassName(POSTGRES_DRIVER)
