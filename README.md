@@ -2,6 +2,8 @@
 
 # CurrencyFair Engineering Test
 
+[Task description](https://github.com/mvpotter/currency-fair/blob/master/Task.md)
+
 ### Information for reviewer 
 
 - Consumer endpoint has basic authentication: user = currency, password = fair
